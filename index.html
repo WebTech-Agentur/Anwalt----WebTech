@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Koch & Partner | Die moderne Kanzlei</title>
+    <meta name="description"
+        content="Moderne und exzellente Rechtsanwalts- und Notarkanzlei. Kompetenz, Vertrauen und Rechtssicherheit auf höchstem Niveau.">
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js" defer></script>
+
+    <style>
+        /* Creative Home Styles */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: var(--color-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            padding: 20vh 5vw 10vh 10vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+            color: var(--color-white);
+        }
+
+        .hero-content h1 {
+            color: var(--color-white);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .hero-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--color-accent);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            max-width: 500px;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .hero-image-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            z-index: 1;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        /* Abstract overlapping block */
+        .abstract-block {
+            position: absolute;
+            bottom: -50px;
+            left: 5vw;
+            background: var(--color-bg);
+            padding: 3rem 4rem;
+            width: 40%;
+            min-width: 400px;
+            z-index: 3;
+            box-shadow: var(--shadow-hover);
+            border-left: 5px solid var(--color-accent);
+        }
+
+        .abstract-block p {
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Premium Features */
+        .features-section {
+            padding: 12rem 0 6rem;
+            background-color: var(--color-bg);
+            position: relative;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .feature-card {
+            padding: 4rem 3rem;
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-white);
+            z-index: -1;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .feature-card:hover {
+            z-index: 10;
+        }
+
+        .feature-card:hover h3 {
+            color: var(--color-accent);
+        }
+
+        .feature-number {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--color-accent);
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            line-height: 1;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-number {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .feature-card:active .feature-number {
+            color: var(--color-primary);
+            text-shadow: 0 0 25px rgba(15, 23, 42, 0.8);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        /* Asymmetric Image Section */
+        .image-text-split {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            align-items: center;
+            gap: 6rem;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .split-image {
+            position: relative;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .split-image::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 70%;
+            height: 50%;
+            border: 2px solid var(--color-primary);
+            z-index: -1;
+        }
+
+        /* Huge CTA */
+        .massive-cta {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .massive-cta::before {
+            content: 'JUSTIZ';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-heading);
+            font-size: 20vw;
+            color: rgba(255, 255, 255, 0.02);
+            font-weight: 700;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .massive-cta h2 {
+            color: var(--color-white);
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image-wrapper {
+                width: 100%;
+                clip-path: none;
+                opacity: 0.3;
+            }
+
+            .abstract-block {
+                width: 90%;
+                left: 5%;
+                bottom: -80px;
+                padding: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-text-split {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -> specific dark-mode for index hero -->
+    <header class="site-header dark-mode">
+        <div class="container">
+            <a href="index.html" class="logo">
+                Koch & Partner
+                <span>Rechtsanwälte & Notare</span>
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Menu öffnen/schließen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">Kanzlei</a></li>
+                    <li><a href="services.html" class="nav-link">Expertise</a></li>
+                    <li><a href="team.html" class="nav-link">Persönlichkeiten</a></li>
+                    <li><a href="contact.html" class="nav-link">Consulting</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Creative Hero Section -->
+    <section class="hero">
+        <div class="hero-content reveal">
+            <span class="section-subtitle" style="color:var(--color-accent)">Kanzlei für Wirtschafts- &
+                Privatrecht</span>
+            <h1>Kompetenz.<br>Vertrauen.<br>Rechtssicherheit.</h1>
+            <p>Ihre renommierten Ansprechpartner für rechtliche und notarielle Belange auf höchstem Niveau. Wir
+                vertreten mit Leidenschaft, Weitsicht und Präzision.</p>
+            <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+                <a href="services.html" class="btn btn-accent">Unsere Expertise</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80"
+                alt="Modernes Kanzleigebäude Architektur">
+        </div>
+
+        <div class="abstract-block reveal delay-1">
+            <p>"Recht haben und Recht bekommen erfordert mehr als Paragrafen. Es erfordert strategische Exzellenz."</p>
+        </div>
+    </section>
+
+    <!-- Features Section / Grid -->
+    <section class="features-section">
+        <div class="container" style="max-width: 100%;">
+            <div class="features-grid reveal delay-2">
+
+                <div class="feature-card">
+                    <span class="feature-number">01</span>
+                    <h3>Jahrzehntelange Erfahrung</h3>
+                    <p>Tiefe Branchenkenntnis und unzählige erfolgreich geführte Mandate bilden das unerschütterliche
+                        Fundament unserer anwaltlichen und notariellen Praxis.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-number">02</span>
+                    <h3>Absolute Diskretion</h3>
+                    <p>Vertraulichkeit ist unser höchstes Gut. Wir garantieren den absolut sicheren Umgang mit all Ihren
+                        sensiblen Unternehmens- und Privatdaten.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-number">03</span>
+                    <h3>Analytische Präzision</h3>
+                    <p>Wir erarbeiten Verträge und Lösungen, die jeden Härtetest bestehen. Detailgenauigkeit und
+                        Scharfsinn zeichnen unsere tägliche Arbeit aus.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Asymmetric Split -->
+    <section class="section-bg-light">
+        <div class="container">
+            <div class="image-text-split">
+                <div class="split-image reveal">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80"
+                        alt="Kanzlei Bibliothek Detail">
+                </div>
+                <div class="split-text reveal delay-1">
+                    <span class="section-subtitle">Philosophie</span>
+                    <h2 class="section-title">Ihr Recht, kompromisslos vertreten.</h2>
+                    <p>Seit über 20 Jahren stehen wir an der Seite von Unternehmen und Privatpersonen. Wir verstehen uns
+                        nicht als reine Rechtsverwalter, sondern als Ihre strategischen Partner.</p>
+                    <p>Unser Fokus liegt darauf, Konflikte bereits im Vorfeld durch intelligente und weitsichtige
+                        Vertragsgestaltung zu vermeiden. Sollte es dennoch zu einer Auseinandersetzung kommen, vertreten
+                        wir Ihre Interessen mit Nachdruck und juristischer Exzellenz.</p>
+                    <a href="about.html" class="btn btn-primary" style="margin-top: 2rem;">Lernen Sie uns kennen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Massive CTA -->
+    <section class="massive-cta">
+        <div class="container reveal">
+            <span class="section-subtitle" style="justify-content: center;">Der nächste Schritt</span>
+            <h2>Exzellenz in Beratung<br>beginnt mit einem Gespräch.</h2>
+            <a href="contact.html" class="btn btn-accent">Mandat anfragen</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        Koch & Partner
+                        <span>Rechtsanwälte & Notare</span>
+                    </a>
+                    <p style="font-size: 0.9rem; max-width: 280px;">Kompromisslose juristische Vertretung und notarielle
+                        Dienstleistungen auf allerhöchstem Niveau.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Kanzlei</a></li>
+                        <li><a href="services.html">Expertise</a></li>
+                        <li><a href="team.html">Persönlichkeiten</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Rechtsgebiete</h4>
+                    <ul class="footer-nav">
+                        <li><a href="services.html">Arbeitsrecht</a></li>
+                        <li><a href="services.html">Baurecht</a></li>
+                        <li><a href="services.html">Erbrecht</a></li>
+                        <li><a href="services.html">Notariat</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <div class="footer-contact">
+                        <p>Kanzleistraße 1<br>10115 Berlin</p>
+                        <p>T +49 30 123 456 78<br>E info@koch-partner.de</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Koch & Partner. All rights reserved.</div>
+                <div style="display:flex; gap: 2rem;">
+                    <a href="#" style="color: rgba(255,255,255,0.6);">Impressum</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6);">Datenschutz</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6);">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

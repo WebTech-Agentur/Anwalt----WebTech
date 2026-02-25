@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise | Dr. Koch & Partner</title>
+    <meta name="description" content="Unsere rechtlichen und notariellen Kernkompetenzen im Detail.">
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js" defer></script>
+
+    <style>
+        .page-hero {
+            padding: 25vh 0 10vh;
+            background-color: var(--color-bg);
+            position: relative;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            margin-bottom: 2rem;
+            max-width: 900px;
+        }
+
+        .huge-sub {
+            font-family: var(--font-body);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--color-text);
+            font-weight: 300;
+            line-height: 1.3;
+            max-width: 800px;
+        }
+
+        /* Creative Services Layout */
+        .service-showcase {
+            padding: var(--spacing-xl) 0;
+            border-top: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 6rem;
+            align-items: center;
+            margin-bottom: 10rem;
+        }
+
+        .service-row:nth-child(even) {
+            grid-template-columns: 7fr 5fr;
+        }
+
+        .service-row:nth-child(even) .service-content {
+            order: -1;
+        }
+
+        .service-img-wrapper {
+            position: relative;
+        }
+
+        .service-img-wrapper img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        .service-number {
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--color-bg);
+            -webkit-text-stroke: 2px var(--color-accent);
+            line-height: 1;
+            z-index: 2;
+        }
+
+        .service-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .service-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background-color: var(--color-accent);
+        }
+
+        .service-content p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+        }
+
+        .service-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 1024px) {
+
+            .service-row,
+            .service-row:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                margin-bottom: 6rem;
+            }
+
+            .service-row:nth-child(even) .service-content {
+                order: 1;
+                /* Reset order on mobile */
+            }
+
+            .service-img-wrapper img {
+                height: 400px;
+            }
+
+            .service-number {
+                left: -10px;
+                top: -30px;
+                font-size: 6rem;
+            }
+
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                Koch & Partner
+                <span>Rechtsanwälte & Notare</span>
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Menu öffnen/schließen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">Kanzlei</a></li>
+                    <li><a href="services.html" class="nav-link active">Expertise</a></li>
+                    <li><a href="team.html" class="nav-link">Persönlichkeiten</a></li>
+                    <li><a href="contact.html" class="nav-link">Consulting</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="container reveal">
+            <span class="section-subtitle">Tätigkeitsfelder</span>
+            <h1>Fokussierte<br>Kompetenz.</h1>
+            <p class="huge-sub">Wir konzentrieren uns auf das, was wir perfekt beherrschen. Nur so können wir
+                juristische Exzellenz garantieren.</p>
+        </div>
+    </div>
+
+    <section class="service-showcase section-bg-light">
+        <div class="container">
+
+            <!-- Service 1 -->
+            <div class="service-row">
+                <div class="service-img-wrapper reveal">
+                    <span class="service-number">01</span>
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80"
+                        alt="Arbeitsrecht">
+                </div>
+                <div class="service-content reveal delay-1">
+                    <h2>Arbeitsrecht</h2>
+                    <p>Die Arbeitswelt befindet sich im radikalen Wandel. Wir beraten Unternehmen und Führungskräfte
+                        strategisch in allen Fragen des individuellen und kollektiven Arbeitsrechts. Unser Ziel ist die
+                        Schaffung robuster, zukunftssicherer Strukturen und die resolute Vermeidung von Prozessrisiken.
+                    </p>
+                    <ul class="service-list">
+                        <li>Vertragsgestaltung</li>
+                        <li>Kündigungsschutz</li>
+                        <li>Restrukturierung</li>
+                        <li>Tarifverhandlungen</li>
+                        <li>Betriebsverfassungsrecht</li>
+                        <li>Compliance-Beratung</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Mandat anfragen</a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-row">
+                <div class="service-img-wrapper reveal">
+                    <span class="service-number">02</span>
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
+                        alt="Baurecht">
+                </div>
+                <div class="service-content reveal delay-1">
+                    <h2>Baurecht & Immobilien</h2>
+                    <p>Immobilienprojekte binden enormes Kapital. Wir begleiten Investoren, Bauherren und
+                        Projektentwickler in jeder Projektphase. Durch intelligente Vertragsgestaltung minimieren wir
+                        Risiken und setzen Gewährleistungsansprüche hartnäckig durch.</p>
+                    <ul class="service-list">
+                        <li>Bauverträge</li>
+                        <li>Architektenrecht</li>
+                        <li>Projektentwicklung</li>
+                        <li>Mängelansprüche</li>
+                        <li>Baugenehmigungen</li>
+                        <li>Real Estate M&A</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Mandat anfragen</a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-row">
+                <div class="service-img-wrapper reveal">
+                    <span class="service-number">03</span>
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80"
+                        alt="Erbrecht & Notariat">
+                </div>
+                <div class="service-content reveal delay-1">
+                    <h2>Notariat & Nachfolge</h2>
+                    <p>Die Sicherung geschaffener Werte für kommende Generationen verlangt Weitblick und höchste
+                        Diskretion. Wir entwerfen wasserdichte Nachfolgekonzepte für Unternehmen und Privatvermögen und
+                        übernehmen die rechtssichere notarielle Beurkundung.</p>
+                    <ul class="service-list">
+                        <li>Unternehmensnachfolge</li>
+                        <li>Testamentsgestaltung</li>
+                        <li>Immobilientransaktionen</li>
+                        <li>Gesellschaftsgründungen</li>
+                        <li>Eheverträge</li>
+                        <li>Vorsorgevollmachten</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Mandat anfragen</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-bg-dark" style="text-align: center; padding: 10rem 0;">
+        <div class="container reveal">
+            <h2 style="font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 2rem;">Beratung auf höchstem Niveau.</h2>
+            <a href="contact.html" class="btn btn-accent">Jetzt kontaktieren</a>
+        </div>
+    </section>
+
+    <!-- Footer snippet -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        Koch & Partner
+                        <span>Rechtsanwälte & Notare</span>
+                    </a>
+                    <p style="font-size: 0.9rem; max-width: 280px;">Kompromisslose juristische Vertretung und notarielle
+                        Dienstleistungen auf allerhöchstem Niveau.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Kanzlei</a></li>
+                        <li><a href="services.html">Expertise</a></li>
+                        <li><a href="team.html">Persönlichkeiten</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Rechtsgebiete</h4>
+                    <ul class="footer-nav">
+                        <li><a href="services.html">Arbeitsrecht</a></li>
+                        <li><a href="services.html">Baurecht</a></li>
+                        <li><a href="services.html">Erbrecht</a></li>
+                        <li><a href="services.html">Notariat</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <div class="footer-contact">
+                        <p>Kanzleistraße 1<br>10115 Berlin</p>
+                        <p>T +49 30 123 456 78<br>E info@koch-partner.de</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Koch & Partner. All rights reserved.</div>
+                <div style="display:flex; gap: 2rem;">
+                    <a href="#" style="color: rgba(255,255,255,0.6);">Impressum</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6);">Datenschutz</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6);">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

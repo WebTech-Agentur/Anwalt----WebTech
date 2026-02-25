@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanzlei | Dr. Koch & Partner</title>
+    <meta name="description"
+        content="Kanzleiportrait: Tradition trifft auf moderne Rechtsberatung bei Dr. Koch & Partner.">
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js" defer></script>
+
+    <style>
+        .page-hero {
+            padding: 25vh 0 10vh;
+            background-color: var(--color-bg);
+            position: relative;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            margin-bottom: 2rem;
+            max-width: 900px;
+        }
+
+        .huge-sub {
+            font-family: var(--font-body);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--color-text);
+            font-weight: 300;
+            line-height: 1.3;
+            max-width: 800px;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8rem;
+            align-items: center;
+        }
+
+        .history-text p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+        }
+
+        .history-image {
+            position: relative;
+        }
+
+        .history-image img {
+            width: 100%;
+            height: clamp(400px, 80vh, 800px);
+            object-fit: cover;
+        }
+
+        .history-image::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 50%;
+            height: 50%;
+            border-top: 3px solid var(--color-accent);
+            border-left: 3px solid var(--color-accent);
+            z-index: -1;
+        }
+
+        /* Statement Block */
+        .statement-block {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 10rem 0;
+            text-align: center;
+        }
+
+        .statement-block blockquote {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.2;
+            color: var(--color-accent);
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+        }
+
+        .statement-block cite {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-style: normal;
+        }
+
+        @media (max-width: 900px) {
+            .history-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .history-image::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                Koch & Partner
+                <span>Rechtsanwälte & Notare</span>
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Menu öffnen/schließen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">Kanzlei</a></li>
+                    <li><a href="services.html" class="nav-link">Expertise</a></li>
+                    <li><a href="team.html" class="nav-link">Persönlichkeiten</a></li>
+                    <li><a href="contact.html" class="nav-link">Consulting</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="container reveal">
+            <span class="section-subtitle">Die Kanzlei</span>
+            <h1>Tradition trifft auf<br>moderne Vision.</h1>
+            <p class="huge-sub">Wir vereinen klassische juristische Präzision mit einem tiefen Verständnis für die
+                unternehmerischen Herausforderungen der Gegenwart.</p>
+        </div>
+    </div>
+
+    <section class="section-bg-light">
+        <div class="container">
+            <div class="history-grid">
+                <div class="history-image reveal">
+                    <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?auto=format&fit=crop&q=80"
+                        alt="Innenansicht der Kanzlei">
+                </div>
+                <div class="history-text reveal delay-1">
+                    <h2>Rechtsvertretung mit allerhöchstem Anspruch.</h2>
+                    <p>Die Kanzlei Koch & Partner wurde mit dem expliziten Ziel gegründet, juristische Expertise auf
+                        Großkanzlei-Niveau mit der persönlichen, individuellen Betreuung einer Boutique zu verbinden.
+                        Vom ersten Tag an haben wir uns als verlässlicher Partner für anspruchsvolle Mandanten
+                        etabliert.</p>
+                    <p>Unser Team aus hochqualifizierten Anwälten und Notaren bündelt erlesenes Fachwissen aus
+                        verschiedenen hochkomplexen Rechtsgebieten. So sind wir in der Lage, auch internationale,
+                        fachübergreifende Sachverhalte effizient und zielgerichtet zu lösen.</p>
+                    <div
+                        style="margin-top: 3rem; border-left: 2px solid rgba(15, 23, 42, 0.2); background: rgba(15, 23, 42, 0.03); padding: 1.5rem 2rem;">
+                        <h4 style="margin-bottom: 0.5rem; color: var(--color-primary);">Dr. Maximilian Koch</h4>
+                        <p
+                            style="font-size: 0.9rem; margin:0; opacity:0.7; text-transform:uppercase; letter-spacing:0.1em; color: var(--color-text);">
+                            Gründer & Senior Partner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="statement-block">
+        <div class="container reveal">
+            <blockquote>"Gute Anwälte erklären Ihnen, warum ein Risiko besteht. Exzellente Anwälte bauen den Weg, der
+                sicher daran vorbeiführt."</blockquote>
+            <cite>— Die Kanzlei-Philosophie</cite>
+        </div>
+    </section>
+
+    <!-- Footer snippet -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        Koch & Partner
+                        <span>Rechtsanwälte & Notare</span>
+                    </a>
+                    <p style="font-size: 0.9rem; max-width: 280px;">Kompromisslose juristische Vertretung und notarielle
+                        Dienstleistungen auf allerhöchstem Niveau.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Kanzlei</a></li>
+                        <li><a href="services.html">Expertise</a></li>
+                        <li><a href="team.html">Persönlichkeiten</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Rechtsgebiete</h4>
+                    <ul class="footer-nav">
+                        <li><a href="services.html">Arbeitsrecht</a></li>
+                        <li><a href="services.html">Baurecht</a></li>
+                        <li><a href="services.html">Erbrecht</a></li>
+                        <li><a href="services.html">Notariat</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <div class="footer-contact">
+                        <p>Kanzleistraße 1<br>10115 Berlin</p>
+                        <p>T +49 30 123 456 78<br>E info@koch-partner.de</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Koch & Partner. All rights reserved.</div>
+                <div style="display:flex; gap: 2rem;">
+                    <a href="#" style="color: rgba(255,255,255,0.6);">Impressum</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6);">Datenschutz</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6);">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
