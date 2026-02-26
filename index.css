@@ -118,130 +118,85 @@ img {
     justify-content: center;
     padding: 1.15rem 3.5rem;
     font-family: var(--font-body);
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     position: relative;
     overflow: hidden;
     z-index: 1;
-    border-radius: 5px;
-    /* Sleek rectangle with slightly soft edges */
+    border-radius: 50px;
+    /* Highly modern pill shape */
     text-decoration: none;
     border: 1px solid transparent;
 }
 
-/* Base Primary Button */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-white);
+    z-index: -1;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+    transform: translateY(100%);
+    border-radius: 50px;
+}
+
+.btn:hover::before {
+    transform: translateY(0);
+}
+
 .btn-primary {
     background: var(--color-primary);
     color: var(--color-white);
-    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.3);
 }
 
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(120deg, var(--color-primary) 0%, #1e293b 100%);
-    z-index: -2;
-}
-
-/* Subtle inner glow / border effect using pseudo element */
-.btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    /* 1px border */
-    border-radius: 4px;
-    /* match inner slightly smaller */
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Primary Button Hover */
 .btn-primary:hover {
+    color: var(--color-primary);
     transform: translateY(-4px);
-    box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.4);
-    letter-spacing: 0.2em;
-    color: var(--color-accent);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.5);
 }
 
-.btn-primary:hover::after {
-    background: linear-gradient(to bottom right, rgba(198, 167, 94, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.btn-primary:active {
-    transform: translateY(1px);
-    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.3);
-}
-
-/* Base Accent Button */
 .btn-accent {
     background: var(--color-accent);
     color: var(--color-primary);
-    box-shadow: 0 4px 15px rgba(198, 167, 94, 0.3);
+    box-shadow: 0 10px 30px rgba(198, 167, 94, 0.3);
+}
+
+.btn-accent:hover {
+    color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(198, 167, 94, 0.6);
 }
 
 .btn-accent::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(120deg, var(--color-accent) 0%, #e3c886 100%);
-    z-index: -2;
-}
-
-/* Subtle inner glow / border effect */
-.btn-accent::after {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    border-radius: 4px;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Accent Button Hover */
-.btn-accent:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px -5px rgba(198, 167, 94, 0.6);
-    letter-spacing: 0.2em;
-    color: var(--color-primary);
-}
-
-.btn-accent:hover::after {
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.btn-accent:active {
-    transform: translateY(1px);
-    box-shadow: 0 5px 15px rgba(198, 167, 94, 0.4);
+    background: var(--color-primary);
 }
 
 /* Outline Button */
 .btn-outline {
     background: transparent;
-    border: 1px solid rgba(198, 167, 94, 0.5);
+    border: 1px solid var(--color-accent);
     color: var(--color-accent);
     backdrop-filter: blur(5px);
 }
 
 .btn-outline:hover {
-    border-color: var(--color-accent);
-    box-shadow: inset 0 0 0 1px var(--color-accent), 0 10px 25px rgba(198, 167, 94, 0.15);
-    transform: translateY(-3px);
-    letter-spacing: 0.2em;
-    background: rgba(198, 167, 94, 0.05);
+    color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(198, 167, 94, 0.4);
+}
+
+.btn-outline::before {
+    background: var(--color-accent);
 }
 
 /* Modern Creative Header */
