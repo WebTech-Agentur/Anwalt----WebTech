@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Koch & Partner | Die moderne Kanzlei</title>
+    <title>Berg | Law & Consulting</title>
     <meta name="description"
         content="Moderne und exzellente Rechtsanwalts- und Notarkanzlei. Kompetenz, Vertrauen und Rechtssicherheit auf höchstem Niveau.">
     <link rel="stylesheet" href="index.css">
@@ -107,12 +107,16 @@
         }
 
         .feature-card {
-            padding: 4rem 3rem;
+            padding: clamp(2.5rem, 8vw, 4rem) clamp(1.5rem, 5vw, 3rem);
             border: 1px solid rgba(15, 23, 42, 0.05);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 350px;
         }
 
         .feature-card::before {
@@ -143,14 +147,15 @@
 
         .feature-number {
             font-family: var(--font-heading);
-            font-size: 4rem;
+            font-size: clamp(3rem, 10vw, 5rem);
             color: var(--color-accent);
             position: absolute;
-            top: 2rem;
-            right: 2rem;
+            top: 1.5rem;
+            right: 1.5rem;
             line-height: 1;
             font-weight: 700;
             transition: var(--transition);
+            opacity: 0.6;
         }
 
         .feature-card:hover .feature-number {
@@ -185,7 +190,7 @@
 
         .split-image img {
             width: 100%;
-            height: 600px;
+            height: clamp(300px, 60vh, 600px);
             object-fit: cover;
             box-shadow: var(--shadow-hover);
         }
@@ -267,8 +272,8 @@
     <header class="site-header dark-mode">
         <div class="container">
             <a href="index.html" class="logo">
-                Koch & Partner
-                <span>Rechtsanwälte & Notare</span>
+                Berg
+                <span>Law & Consulting</span>
             </a>
 
             <button class="mobile-menu-btn" aria-label="Menu öffnen/schließen">
@@ -279,11 +284,11 @@
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="index.html" class="nav-link active">Startseite</a></li>
                     <li><a href="about.html" class="nav-link">Kanzlei</a></li>
                     <li><a href="services.html" class="nav-link">Expertise</a></li>
                     <li><a href="team.html" class="nav-link">Team</a></li>
-                    <li><a href="contact.html" class="nav-link">Consulting</a></li>
+                    <li><a href="contact.html" class="nav-link">Beratung</a></li>
                 </ul>
             </nav>
         </div>
@@ -318,23 +323,23 @@
 
                 <div class="feature-card">
                     <span class="feature-number">01</span>
-                    <h3>Decades of Experience</h3>
-                    <p>In-depth industry knowledge and numerous successfully handled mandates form the solid foundation
-                        of our legal and notarial practice.</p>
+                    <h3>Jahrzehntelange Erfahrung</h3>
+                    <p>Tiefgreifende Branchenkenntnisse und zahlreiche erfolgreich betreute Mandate bilden das solide
+                        Fundament unserer Rechts- und Notarpraxis.</p>
                 </div>
 
                 <div class="feature-card">
                     <span class="feature-number">02</span>
-                    <h3>Absolute Confidentiality</h3>
-                    <p>Confidentiality is our highest priority. We guarantee the absolute protection of all your
-                        sensitive business and personal data.</p>
+                    <h3>Absolute Verschwiegenheit</h3>
+                    <p>Diskretion ist unsere höchste Priorität. Wir garantieren den absoluten Schutz all Ihrer sensiblen
+                        geschäftlichen und persönlichen Daten.</p>
                 </div>
 
                 <div class="feature-card">
                     <span class="feature-number">03</span>
-                    <h3>Analytical Precision</h3>
-                    <p>We draft contracts and solutions that stand every test. Accuracy and sharp attention to detail
-                        define our daily work.</p>
+                    <h3>Analytische Präzision</h3>
+                    <p>Wir entwerfen Verträge und Lösungen, die jeder Prüfung standhalten. Genauigkeit und scharfer
+                        Blick fürs Detail definieren unsere tägliche Arbeit.</p>
                 </div>
 
             </div>
@@ -377,8 +382,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="index.html" class="logo">
-                        Koch & Partner
-                        <span>Rechtsanwälte & Notare</span>
+                        Berg
+                        <span>Law & Consulting</span>
                     </a>
                     <p style="font-size: 0.9rem; max-width: 280px;">Kompromisslose juristische Vertretung und notarielle
                         Dienstleistungen auf allerhöchstem Niveau.</p>
@@ -387,11 +392,11 @@
                 <div class="footer-col">
                     <h4>Navigation</h4>
                     <ul class="footer-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Startseite</a></li>
                         <li><a href="about.html">Kanzlei</a></li>
                         <li><a href="services.html">Expertise</a></li>
                         <li><a href="team.html">Team</a></li>
-                        <li><a href="contact.html">Consulting</a></li>
+                        <li><a href="contact.html">Beratung</a></li>
                     </ul>
                 </div>
 
@@ -409,13 +414,13 @@
                     <h4>Kontakt</h4>
                     <div class="footer-contact">
                         <p>1 Hafenstraße<br>Uelzen, Niedersachsen</p>
-                        <p>Telefon: 15566284478<br>Email: info@koch-partner.de</p>
+                        <p>Phone Number: 15566284478<br>Email: info@berg-law-consulting.de</p>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Dr. Koch & Partner. Alle Rechte vorbehalten.</div>
+                <div>&copy; 2026 Berg | Law & Consulting. Alle Rechte vorbehalten.</div>
                 <div style="display:flex; gap: 2rem;">
                     <a href="imprint.html" style="color: rgba(255,255,255,0.6);">Impressum</a>
                     <a href="privacy.html" style="color: rgba(255,255,255,0.6);">Datenschutz</a>

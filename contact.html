@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulting & Kontakt | Dr. Koch & Partner</title>
-    <meta name="description" content="Kontaktieren Sie unsere Kanzlei für ein exklusives Mandat.">
+    <title>Beratung & Kontakt | Berg | Law & Consulting</title>
+    <meta name="description"
+        content="Kontaktieren Sie Berg | Law & Consulting für eine erstklassige juristische Beratung.">
     <link rel="stylesheet" href="index.css">
     <script src="main.js" defer></script>
 
@@ -91,8 +92,16 @@
             width: 60%;
             height: 80%;
             background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') center/cover;
-            filter: grayscale(100%) opacity(0.1);
+            filter: grayscale(100%) opacity(0.05);
             z-index: 0;
+            display: none;
+            /* Hidden on mobile to keep it clean */
+        }
+
+        @media (min-width: 1025px) {
+            .contact-form-side::before {
+                display: block;
+            }
         }
 
         .form-card {
@@ -109,7 +118,7 @@
 
         .form-card h2 {
             font-family: var(--font-heading);
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
             color: var(--color-primary);
             margin-bottom: 3rem;
         }
@@ -200,8 +209,8 @@
     <header class="site-header" style="background: var(--color-bg); box-shadow: 0 4px 30px rgba(0,0,0,0.05);">
         <div class="container">
             <a href="index.html" class="logo">
-                Koch & Partner
-                <span>Rechtsanwälte & Notare</span>
+                Berg
+                <span>Law & Consulting</span>
             </a>
 
             <button class="mobile-menu-btn" aria-label="Menu öffnen/schließen">
@@ -212,11 +221,11 @@
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Startseite</a></li>
                     <li><a href="about.html" class="nav-link">Kanzlei</a></li>
                     <li><a href="services.html" class="nav-link">Expertise</a></li>
                     <li><a href="team.html" class="nav-link">Team</a></li>
-                    <li><a href="contact.html" class="nav-link active">Consulting</a></li>
+                    <li><a href="contact.html" class="nav-link active">Beratung</a></li>
                 </ul>
             </nav>
         </div>
@@ -226,20 +235,20 @@
 
         <!-- Left Side: Dark Info Panel -->
         <div class="contact-info-side">
-            <div class="vertical-text">CONSULTING</div>
+            <div class="vertical-text">BERATUNG</div>
 
             <div class="reveal">
                 <h1>Lassen Sie uns<br>sprechen.</h1>
 
                 <div class="info-grid">
                     <div class="info-item">
-                        <h3>Headquarter Berlin</h3>
-                        <p>Kanzleistraße 1<br>10115 Berlin</p>
+                        <h3>1 Hafenstraße</h3>
+                        <p>Uelzen, Niedersachsen</p>
                     </div>
 
                     <div class="info-item">
-                        <h3>Direkter Kontakt</h3>
-                        <p>T. +49 30 123 456 78<br>E. contact@koch-partner.de</p>
+                        <h3>Kontakt</h3>
+                        <p>Email: info@berg-law-consulting.de<br>Telefonnummer: 15566284478</p>
                     </div>
                 </div>
             </div>
@@ -287,8 +296,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="index.html" class="logo">
-                        Koch & Partner
-                        <span>Rechtsanwälte & Notare</span>
+                        Berg
+                        <span>Law & Consulting</span>
                     </a>
                     <p style="font-size: 0.9rem; max-width: 280px;">Kompromisslose juristische Vertretung und notarielle
                         Dienstleistungen auf allerhöchstem Niveau.</p>
@@ -297,11 +306,11 @@
                 <div class="footer-col">
                     <h4>Navigation</h4>
                     <ul class="footer-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Startseite</a></li>
                         <li><a href="about.html">Kanzlei</a></li>
                         <li><a href="services.html">Expertise</a></li>
                         <li><a href="team.html">Team</a></li>
-                        <li><a href="contact.html">Consulting</a></li>
+                        <li><a href="contact.html">Beratung</a></li>
                     </ul>
                 </div>
 
@@ -319,13 +328,13 @@
                     <h4>Kontakt</h4>
                     <div class="footer-contact">
                         <p>1 Hafenstraße<br>Uelzen, Niedersachsen</p>
-                        <p>Telefon: 15566284478<br>Email: info@koch-partner.de</p>
+                        <p>Telefonnummer: 15566284478<br>Email: info@berg-law-consulting.de</p>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Dr. Koch & Partner. Alle Rechte vorbehalten.</div>
+                <div>&copy; 2026 Berg | Law & Consulting. Alle Rechte vorbehalten.</div>
                 <div style="display:flex; gap: 2rem;">
                     <a href="imprint.html" style="color: rgba(255,255,255,0.6);">Impressum</a>
                     <a href="privacy.html" style="color: rgba(255,255,255,0.6);">Datenschutz</a>

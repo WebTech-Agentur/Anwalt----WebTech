@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team | Dr. Koch & Partner</title>
+    <title>Team | Berg | Law & Consulting</title>
     <meta name="description"
-        content="Lernen Sie die Partner unserer Kanzlei kennen. Expertise und Erfahrung für Ihren Erfolg.">
+        content="Lernen Sie das Team von Berg | Law & Consulting kennen. Expertise und Erfahrung für Ihren Erfolg.">
     <link rel="stylesheet" href="index.css">
     <script src="main.js" defer></script>
 
     <style>
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+        }
+
         .page-hero {
             padding: 25vh 0 10vh;
             background-color: var(--color-bg);
@@ -32,99 +37,106 @@
             max-width: 800px;
         }
 
-        /* Creative Team Layout */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            padding: var(--spacing-xl) 0;
+        /* New Professional Team Layout Styles */
+        .team-section {
+            padding: 80px 5%;
+            background-color: var(--color-bg);
         }
 
-        .team-member {
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-card {
             position: relative;
             overflow: hidden;
-            border-radius: 12px;
-            height: 480px;
-            cursor: pointer;
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease;
         }
 
-        .team-member img {
+        .team-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .team-card img {
             width: 100%;
-            height: 100%;
+            height: 500px;
             object-fit: cover;
-            filter: grayscale(100%);
-            transition: filter 0.8s ease, transform 0.8s ease;
+            object-position: center top;
+            display: block;
         }
 
-        .team-member:hover img {
-            filter: grayscale(0%);
-            transform: scale(1.03);
-        }
-
-        .member-overlay {
+        /* Weißer Bereich für gesamten Text */
+        .team-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 3rem;
-            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0) 100%);
-            color: var(--color-white);
-            transform: translateY(30px);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            background: #ffffff;
+            padding: 35px 30px;
+            box-sizing: border-box;
         }
 
-        .team-member:hover .member-overlay {
-            transform: translateY(0);
+        .team-text h3 {
+            font-size: 24px;
+            margin: 0 0 10px;
+            color: var(--color-primary);
+            font-family: var(--font-heading);
         }
 
-        .member-overlay h3 {
-            color: var(--color-white);
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-role {
-            font-family: var(--font-body);
-            color: var(--color-accent);
+        .team-text .position {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #000;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
         }
 
-        .member-desc {
-            font-size: 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            transition-delay: 0.1s;
-            max-width: 90%;
+        .team-text .description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
         }
 
-        .team-member:hover .member-desc {
-            opacity: 0.9;
-            transform: translateY(0);
-        }
-
+        /* Tablet */
         @media (max-width: 1024px) {
-            .team-grid {
-                grid-template-columns: 1fr;
+            .team-card img {
+                height: 420px;
             }
 
-            .team-member {
-                height: 500px;
+            .team-overlay {
+                padding: 25px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .team-section {
+                padding: 50px 20px;
             }
 
-            .member-desc {
-                opacity: 0.9;
-                transform: none;
+            .team-card img {
+                height: 350px;
             }
 
-            .member-overlay {
-                transform: none;
-                background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0) 100%);
+            .team-overlay {
+                position: relative;
+                padding: 20px;
+            }
+
+            .team-text h3 {
+                font-size: 20px;
+            }
+
+            .team-text .description {
+                font-size: 14px;
             }
         }
     </style>
@@ -135,8 +147,8 @@
     <header class="site-header">
         <div class="container">
             <a href="index.html" class="logo">
-                Koch & Partner
-                <span>Rechtsanwälte & Notare</span>
+                Berg
+                <span>Law & Consulting</span>
             </a>
 
             <button class="mobile-menu-btn" aria-label="Menu öffnen/schließen">
@@ -147,11 +159,11 @@
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Startseite</a></li>
                     <li><a href="about.html" class="nav-link">Kanzlei</a></li>
                     <li><a href="services.html" class="nav-link">Expertise</a></li>
                     <li><a href="team.html" class="nav-link active">Team</a></li>
-                    <li><a href="contact.html" class="nav-link">Consulting</a></li>
+                    <li><a href="contact.html" class="nav-link">Beratung</a></li>
                 </ul>
             </nav>
         </div>
@@ -165,54 +177,51 @@
         </div>
     </div>
 
-    <section class="section-bg-light" style="padding-top: 0;">
-        <div class="container" style="max-width: 100%; padding: 0;">
-            <div class="team-grid reveal delay-1">
+    <section class="team-section">
+        <div class="team-container reveal delay-1">
 
-                <!-- Partner 1 -->
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&q=80"
-                        alt="Dr. Maximilian Koch">
-                    <div class="member-overlay">
-                        <h3>Dr. Maximilian Koch</h3>
-                        <span class="member-role">Senior Partner & Notar</span>
-                        <div class="member-desc">
-                            <p>Stratege. Visionär. Experte für Erbrecht und komplexe Unternehmensnachfolgen. Vertritt
-                                mit unnachgiebiger Präzision.</p>
-                        </div>
+            <div class="team-card">
+                <img src="images/alexander.jpg" alt="Alexander Berg">
+                <div class="team-overlay">
+                    <div class="team-text">
+                        <h3>Alexander Berg</h3>
+                        <p class="position">Senior Partner & Notar</p>
+                        <p class="description">
+                            Spezialisiert auf Immobilienrecht und notarielle Vertragsgestaltung.
+                            Langjährige Erfahrung in komplexen wirtschaftsrechtlichen Mandaten.
+                        </p>
                     </div>
                 </div>
-
-                <!-- Partner 2 -->
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80"
-                        alt="Dr. Julia Schneider">
-                    <div class="member-overlay">
-                        <h3>Dr. Julia Schneider</h3>
-                        <span class="member-role">Partnerin</span>
-                        <div class="member-desc">
-                            <p>Scharfsinnige Verhandlerin. Fachanwältin für Arbeitsrecht. Begleitet multinationale
-                                Konzerne bei massiven Umstrukturierungsprozessen.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Partner 3 -->
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80"
-                        alt="Thomas Weber">
-                    <div class="member-overlay">
-                        <h3>Thomas Weber</h3>
-                        <span class="member-role">Partner</span>
-                        <div class="member-desc">
-                            <p>Der Architekt unter den Juristen. Fachanwalt für Baurecht. Meistert juristische
-                                Großprojekte in der Immobilienbranche mit unvergleichlicher Akribie und
-                                Durchsetzungskraft.</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="team-card">
+                <img src="images/sabine.jpg" alt="Sabine Hartmann">
+                <div class="team-overlay">
+                    <div class="team-text">
+                        <h3>Sabine Hartmann</h3>
+                        <p class="position">Partnerin</p>
+                        <p class="description">
+                            Fachanwältin für Arbeitsrecht. Beratung von Unternehmen in
+                            kollektiven und individuellen arbeitsrechtlichen Fragestellungen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="images/christian.jpg" alt="Christian Meier">
+                <div class="team-overlay">
+                    <div class="team-text">
+                        <h3>Christian Meier</h3>
+                        <p class="position">Partner</p>
+                        <p class="description">
+                            Experte für Gesellschafts- und Vertragsrecht mit Fokus
+                            auf mittelständische Unternehmen und strategische Beratung.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -221,8 +230,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="index.html" class="logo">
-                        Koch & Partner
-                        <span>Rechtsanwälte & Notare</span>
+                        Berg
+                        <span>Law & Consulting</span>
                     </a>
                     <p style="font-size: 0.9rem; max-width: 280px;">Kompromisslose juristische Vertretung und notarielle
                         Dienstleistungen auf allerhöchstem Niveau.</p>
@@ -231,11 +240,11 @@
                 <div class="footer-col">
                     <h4>Navigation</h4>
                     <ul class="footer-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Startseite</a></li>
                         <li><a href="about.html">Kanzlei</a></li>
                         <li><a href="services.html">Expertise</a></li>
                         <li><a href="team.html">Team</a></li>
-                        <li><a href="contact.html">Consulting</a></li>
+                        <li><a href="contact.html">Beratung</a></li>
                     </ul>
                 </div>
 
@@ -253,13 +262,13 @@
                     <h4>Kontakt</h4>
                     <div class="footer-contact">
                         <p>1 Hafenstraße<br>Uelzen, Niedersachsen</p>
-                        <p>Telefon: 15566284478<br>Email: info@koch-partner.de</p>
+                        <p>Phone Number: 15566284478<br>Email: info@berg-law-consulting.de</p>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <div>&copy; 2026 Dr. Koch & Partner. Alle Rechte vorbehalten.</div>
+                <div>&copy; 2026 Berg | Law & Consulting. Alle Rechte vorbehalten.</div>
                 <div style="display:flex; gap: 2rem;">
                     <a href="imprint.html" style="color: rgba(255,255,255,0.6);">Impressum</a>
                     <a href="privacy.html" style="color: rgba(255,255,255,0.6);">Datenschutz</a>

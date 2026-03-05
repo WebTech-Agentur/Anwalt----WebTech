@@ -1,16 +1,12 @@
 /* index.css - Version 2.0 (Creative Redesign) */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
 :root {
-    /* New Color Palette */
+    /* ... (colors omitted for brevity, keeping existing) ... */
     --color-primary: #0F172A;
-    /* Deep Midnight Blue */
     --color-accent: #C6A75E;
-    /* Warm Champagne Gold */
     --color-bg: #FAFAF9;
-    /* Off-White */
     --color-text: #1E293B;
-    /* Anthracite */
     --color-white: #FFFFFF;
 
     /* Gradients & Shadows for Premium Feel */
@@ -20,20 +16,19 @@
     --shadow-hover: 0 20px 40px -10px rgba(15, 23, 42, 0.2);
 
     /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Outfit', sans-serif;
+    --font-heading: 'Bodoni Moda', serif;
+    --font-body: 'Inter', sans-serif;
 
     /* Spacing & Layout */
     --container-max-width: 1400px;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 5rem;
-    --spacing-xl: 8rem;
+    --spacing-md: clamp(1.5rem, 4vw, 2.5rem);
+    --spacing-lg: clamp(3rem, 7vw, 6rem);
+    --spacing-xl: clamp(5rem, 10vw, 10rem);
 
     /* Styling */
     --border-radius: 0px;
-    /* Sharp, modern edges */
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -67,30 +62,33 @@ h5,
 h6 {
     font-family: var(--font-heading);
     color: var(--color-primary);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.1;
+    font-optical-sizing: auto;
 }
 
 h1 {
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    letter-spacing: -0.02em;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    letter-spacing: -0.01em;
 }
 
 h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
     letter-spacing: -0.01em;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    letter-spacing: 0.02em;
 }
 
 p {
-    font-size: 1.125rem;
-    opacity: 0.9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
     margin-bottom: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 a {
@@ -564,6 +562,10 @@ section {
 }
 
 @media (max-width: 768px) {
+    .site-header {
+        padding: 1rem 0;
+    }
+
     .mobile-menu-btn {
         display: block;
     }
@@ -610,12 +612,12 @@ section {
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2.5rem;
     }
 
     .footer-bottom {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
         text-align: center;
     }
 }
