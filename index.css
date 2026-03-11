@@ -1,8 +1,8 @@
 /* index.css - Version 2.0 (Creative Redesign) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-    /* ... (colors omitted for brevity, keeping existing) ... */
+    /* Colors */
     --color-primary: #0F172A;
     --color-accent: #C6A75E;
     --color-bg: #FAFAF9;
@@ -16,8 +16,8 @@
     --shadow-hover: 0 20px 40px -10px rgba(15, 23, 42, 0.2);
 
     /* Typography */
-    --font-heading: 'Bodoni Moda', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
 
     /* Spacing & Layout */
     --container-max-width: 1400px;
@@ -375,9 +375,11 @@ img {
 }
 
 /* Layout Utilities */
-section {
+section,
+.service-row {
     padding: var(--spacing-xl) 0;
     position: relative;
+    scroll-margin-top: 100px;
 }
 
 .section-bg-light {
